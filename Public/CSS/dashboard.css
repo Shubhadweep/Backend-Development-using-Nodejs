@@ -1,0 +1,19 @@
+body {
+    background-image: url(../Images/background.avif);
+    background-size: cover;
+}
+.container {
+    margin-top: 50px;
+}
+.card {
+    margin-top: 20px;
+    margin-bottom: 200px;
+}
+.card-header {
+    background-color: #007bff;
+    color: white;
+}
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}

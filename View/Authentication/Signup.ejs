@@ -1,0 +1,40 @@
+<%- include('../Includes/header.ejs') -%>
+
+<link rel="stylesheet" href="/CSS/signup.css">
+
+</head>
+
+<body>
+    <%- include('../Includes/navbar.ejs') -%>
+
+    <main>
+        <h1 class="member">Signup With Your Details</h1>
+<div class="container">
+	<form action="/PostSignup" method="POST">
+		<input type="text" name="Fullname" placeholder="Your Full Name" required="">
+		<input type="email" name="email" placeholder="email address" required="">
+		<div>
+			<%if(mailData){%>
+				<p class="text-danger"><%=mailData%></p>
+			<%}%>
+		</div>
+        <input type="number" name="contact_No" placeholder="Contact Number" required="">
+        <input type="password" name="password" placeholder="password" required="">
+		<div>
+			<%if(passwordData){%>
+				<p class="text-danger"><%=passwordData%></p>
+			<%}%>
+		</div>
+		<input type="password" name="repeatPass" placeholder="retype password" required="">
+		<select name="Gender" required="">
+		    <option value="Gender">Gender</option>
+		    <option value="Male">Male</option>
+		    <option value="Female">Female</option>
+  		</select>
+		
+		<input type="submit" name="submit" value="Submit">
+		<input type="reset" name="reset" value="Reset"><br />
+	</form>
+</div>
+    </main>
+<%- include('../Includes/footer.ejs') -%>

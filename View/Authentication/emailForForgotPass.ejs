@@ -1,0 +1,55 @@
+<%- include('../Includes/header.ejs') -%>
+<link rel="stylesheet" href="/CSS/forgetPass.css">
+</head>
+<body>
+<%- include('../Includes/navbar.ejs') -%>
+
+<main>
+  
+
+    <form action="/postEmailForgotPass" method="POST">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-2"></div>
+                <div class="col-lg-6 col-md-8 login-box">
+                    <div class="col-lg-12 login-key">
+                        <i class="fa fa-key" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-12 login-title">
+                        Please Enter Your E-malId
+                    </div>
+    
+                    <div class="col-lg-12 login-form">
+                        <div class="col-lg-12 login-form">
+                                <div>
+                                    <%if(emailMessage){%>
+                                        <p class="text-danger"><%=emailMessage%></p>
+                                    <%}%>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Email-ID</label>
+                                    <input type="text" name="email" class="form-control">
+                                </div>
+                               
+    
+                                <div class="col-lg-12 loginbttm">
+                                    <div class="col-lg-6 login-btm login-text">
+                                        <!-- Error Message -->
+                                    </div>
+                                    <div class="col-lg-6 login-btm login-button">
+                                        <button type="submit" class="btn btn-outline-primary">Submit</button>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-2"></div>
+                </div>
+            </div>
+    
+
+    </form>
+</main>
+
+<%- include('../Includes/footer.ejs') -%>

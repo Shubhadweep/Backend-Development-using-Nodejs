@@ -1,0 +1,110 @@
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	font-family: 'Questrial', sans-serif;
+}
+body {
+	background-image: url('../Images/bg1.jpg');
+    background-size: cover;
+
+}
+h1 {
+	color: #fff;
+	text-align: center;
+	margin-top: 130px;
+}
+h1.member {
+	margin-top: 45px;
+}
+.container {
+	background-color: rgba(255, 255, 255, 0.6);
+	width: 400px;
+	height: auto;
+	text-align: center;
+	margin: 0 auto;
+	padding: 15px;
+	margin-top: 40px;
+    margin-bottom: 30px;
+}
+input[type=text], input[type=password], input[type=email],input[type=number] {
+	box-sizing: border-box;
+	width: 300px;
+	height: 45px;
+	font-size: 16px;
+	margin-bottom: 15px;
+	margin-top: 15px; 
+	background-image: url("https://res.cloudinary.com/mamo/image/upload/c_scale,w_40/v1475961978/Contacts-Filled-50_qrzhh1.png");
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 60px;
+}
+input[type=password] {
+	background-image: url("https://res.cloudinary.com/mamo/image/upload/c_scale,w_40/v1475961982/Lock-Filled-50_szrogo.png");
+}
+input[type=email] {
+	background-image: url("https://res.cloudinary.com/mamo/image/upload/c_scale,w_40/v1476033159/Gmail-Login-Filled-50_tywgz0.png");
+	background-position: 5px;
+}
+input[type=number] {
+	background-image: url("https://img.icons8.com/?size=100&id=61107&format=png&color=000000");
+    background-size: contain;
+	background-position: 5px;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+	background-color: #800080;
+	color: #fff;
+	padding: 10px, 15px;
+	cursor: pointer;
+	width: 148px;
+	height: 45px;
+	margin-bottom: 20px;
+}
+select {
+	width: 300px;
+	height: 45px;
+	font-size: 16px;
+	margin-bottom: 15px;
+	margin-top: 15px; 
+
+}
+input[type="checkbox"] {
+	margin-bottom: 25px;
+}
+/*Media Queries Section*/
+
+@media screen and (max-width: 480px) {
+	h1 {
+		margin-top: 30px;
+	}
+	.container {
+		width: 90%;
+		padding: 0 5%;
+
+		
+	}
+}
+@media screen and (max-width: 332px) {
+	.container {
+		height: auto;
+		background-color: rgba(255, 255, 255, 0.4);
+	}
+	input[type=text], input[type=password], input[type=email], input[type=date], input[type=color], select {
+		width: 275px;
+		height: auto;
+	}
+	input[type=button], input[type=submit], input[type=reset] {
+		width: 150px;
+		height: 30px;
+	}
+	input[type=checkbox] {
+		line-height: -50px;
+	}
+	input[type=color] {
+		height: 40px;
+	}
+	p {
+		line-height: 1px;
+	}	
+
+}
