@@ -2,6 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const server = express();
 const Path = require('path');
+// cookie :
+const cookieParser = require ('cookie-parser');
+
 const systemModel = require('./Model/authModel');
 const mongoose = require('mongoose');
 const router = require('./Router/authRouter');
@@ -43,7 +46,7 @@ server.use(async(req,res,next)=>{
     }
 })
 
-
+server.use(cookieParser());
 server.use(router);
 mongoose.connect(process.env.DATABASE_URL)
 .then(()=>{

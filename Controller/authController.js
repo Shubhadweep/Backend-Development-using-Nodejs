@@ -122,11 +122,13 @@ const getLogin = (req,res)=>{
     let verification = req.flash("verification_Err");
     console.log("User Verification Check sms: ",verification);
     let verificationSms = (verification.length>0 ? verification[0] : null);
+    console.log("Cookie Value Colleted: ",req.cookies);
     res.render("Authentication/Login",{
         title:'Login Page',
         mailData : emailSms,
         passwordData : passwordSms,
-        userVerification: verificationSms
+        userVerification: verificationSms,
+        cookie_Data: req.cookies,
     })
 }
 
@@ -143,6 +145,8 @@ const getDashboard = async(req,res)=>{
 
 const postLogin = async(req,res)=>{
     try{
+        let check = req.body.checkbox;
+        console.log("If the user is trying to save data in Cookies: ",check);
         console.log("The email and Password collected from the Login form: ",req.body.email,req.body.password);
         let existMail = await systemModel.findOne({mail_Id:req.body.email});
         if(!existMail){
@@ -165,6 +169,16 @@ const postLogin = async(req,res)=>{
                     if(error){
                         console.log("Session data Saving error: ",error);
                     }else{
+                        if(check){
+                            const cookie_Value ={
+                                emailCookie : existMail.mail_Id,
+                                passwordCookie: req.body.password
+                            };
+                            res.cookie("cookieData",cookie_Value,{
+                                expires: new Date(Date.now()+ 3600000),
+                                httpOnly:true,
+                            });
+                        }
                         console.log("Session data is saved Successfully");
                         console.log("Login Successfull");
                         res.redirect("/DashBoard");
@@ -314,6 +328,10 @@ const postforgotPassword = async(req,res)=>{
 
     }
 }
+
+
+
+
 
 module.exports = {getSignupForm,getLogin,logout,getDashboard,forgotPassword,signupPost,postLogin
     ,postforgotPassword,

@@ -9,6 +9,9 @@ route.get("/Login",getLogin);
 route.get("/Logout",logout);
 route.get("/DashBoard",getDashboard);
 
+
+
+
 route.get("/emailForForgetPass",emilForForgotPass);
 route.post("/postEmailForgotPass",postemilForForgotPass);
 

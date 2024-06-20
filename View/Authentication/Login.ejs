@@ -11,13 +11,15 @@
             <p class="text-danger"><%=userVerification%></p>
           <%}%>
           <form class="login-form " action="/PostLogin" method="POST">
-            <input type="text" name="email" placeholder="Enter Your Email-ID"/>
+            <input type="text" name="email" placeholder="Enter Your Email-ID" 
+            value="<%if(cookie_Data.cookieData){%><%=cookie_Data.cookieData.emailCookie%><%}%>"/>
             <div>
               <%if(mailData){%>
                 <p class="text-danger"><%=mailData%></p>
               <%}%>
             </div>
-            <input type="password" name="password" placeholder="Enter Your Password"/>
+            <input type="password" name="password" placeholder="Enter Your Password"
+            value="<%if(cookie_Data.cookieData){%><%=cookie_Data.cookieData.passwordCookie%><%}%>"/>
             <div>
               <%if(passwordData){%>
                 <p class="text-danger"><%=passwordData%></p>
@@ -25,6 +27,9 @@
             </div>
             <button type="submit">login</button>
             <p class="message">Foget Password? <a href="/emailForForgetPass">Click Here</a></p>
+            <div class="checkbox">
+              <label><input type="checkbox" name="checkbox"> Remember me</label>
+            </div>
           </form>
         </div>
       </div>
